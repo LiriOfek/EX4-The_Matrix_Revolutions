@@ -11,6 +11,8 @@ Purpose: This file print true if the given array is
 #define SIZE (3)
 #define INITIAL_INDEX (0)
 #define INITIAL_NUMBER (0)
+#define PRINT_TRUE ("true\n")
+#define PRINT_FALSE ("false\n")
 
 bool check_if_array_is_magic_square(int two_dimension_array[SIZE][SIZE]) {
 	/********************************************************\
@@ -59,4 +61,42 @@ bool check_if_array_is_magic_square(int two_dimension_array[SIZE][SIZE]) {
 		}
 	}
 	return true;
+}
+
+void main() {
+	/********************************************************\
+	* Function name - main
+	*
+	* Function Purpose - check if the array is magic square
+	*					 if it is - print true
+	*					 otherwise - print false
+	*
+	* Parameters - no Input/Output parameters
+	*
+	* Return Value - there isn't return value
+	*
+	* Side Effects - this function has no side effects
+	*
+	* Semantics - this function call to function that check if
+	*			  given array is magic square.
+	*			  if it is - print true
+	*			  otherwise - print false
+	*
+	* Author - Liri
+	\********************************************************/
+	int two_dimension_array[SIZE][SIZE] = { { 1, 2, 3 },
+											{ 4, 1, 1 },
+											{ 1, 3, 2 } };
+	bool array_is_magic_square = false;
+
+	array_is_magic_square = check_if_array_is_magic_square(two_dimension_array);
+
+	if (array_is_magic_square == true)
+	{
+		printf(PRINT_TRUE);
+	}
+	else
+	{
+		printf(PRINT_FALSE);
+	}
 }
